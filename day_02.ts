@@ -14,11 +14,9 @@ for (let line of input_file) {
     if ( 
         (current_password[position_1 - 1] === letter && current_password[position_2 - 1] !== letter)
         ||
-        (current_password[position_2 - 1] !== letter && current_password[position_2 - 1] === letter)
+        (current_password[position_1 - 1] !== letter && current_password[position_2 - 1] === letter)
         ) { 
             count_total++;
-            console.log("We got a match");
-            console.log("Count", count, "Letter", letter, "Password", password);
         }
     }
 /** This is Part 1. Going to very ugly like just duplicate this until I learn functions or whatever.
