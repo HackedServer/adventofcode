@@ -4,7 +4,7 @@ const input_file = fs.readFileSync('inputs/day_01').toString('utf-8').split('\n'
 
 let number_list: number[] = [];
 
-for (let i = 0; i < input_file.length; i++) {
+main_loop: for (let i = 0; i < input_file.length; i++) {
 
     let x = Number(input_file[i]);
     number_list.push(x);
@@ -14,7 +14,7 @@ for (let i = 0; i < input_file.length; i++) {
             if (x + y + z === 2020) {
                 console.log("Numbers Found: ", x, y, z);
                 console.log("Product: ", x * y * z);
-                //I'd exit/stop here if I knew how.
+                break main_loop;
             }
         }
     }
