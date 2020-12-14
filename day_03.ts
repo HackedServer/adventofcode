@@ -4,15 +4,9 @@ const input_file: string[] = fs.readFileSync('inputs/day_03').toString('utf-8').
 const right: number = 3, down: number = 1;
 let obstacle_count: number = 0;
 
-let cord_x: number = 1, cord_y: number = 1;
+for (let cord_y: number = 1; cord_y < input_file.length; cord_y += down) {
 
-for (cord_y; cord_y < input_file.length; cord_y += down) {
-
-    cord_x += right;
-
-    let mountain: string[] = input_file[cord_y].split('');
-
-    if (mountain[((cord_x % mountain.length) || mountain.length) - 1] === '#') {
+    if (input_file[cord_y].split('')[(((right * cord_y + 1) % input_file[cord_y].split('').length) || input_file[cord_y].split('').length) - 1] === '#') {
         obstacle_count++;
     }
 
