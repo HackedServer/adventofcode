@@ -1,5 +1,4 @@
 import * as fs from 'fs';
-import { exit } from 'process';
 
 const input_file = fs.readFileSync('inputs/day_01').toString('utf-8').split('\n');
 
