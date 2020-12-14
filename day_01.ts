@@ -22,16 +22,6 @@ for (let i = 0; i < input_file.length; i++) {
 }
 
 /**
-for (let source_string of input_file) {
-    let current_number = Number(source_string);
-    number_list.push(current_number);
-    console.log(number_list[number_list.length -1 ]);
-}
-*/
-
-
-
-/**
 Learning Day 1
 const input_file = fs.readFileSync('inputs/day_01').toString('utf-8').split('\n');
 
