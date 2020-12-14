@@ -1,6 +1,38 @@
 import * as fs from 'fs';
+import { exit } from 'process';
+
+const input_file = fs.readFileSync('inputs/day_01').toString('utf-8').split('\n');
+
+let number_list: number[] = [];
+
+for (let i = 0; i < input_file.length; i++) {
+
+    let x = Number(input_file[i]);
+    number_list.push(x);
+
+    for (let y of number_list) {
+        for (let z of number_list) {
+            if (x + y + z === 2020) {
+                console.log("Numbers Found: ", x, y, z);
+                console.log("Product: ", x * y * z);
+                //I'd exit/stop here if I knew how.
+            }
+        }
+    }
+}
+
+/**
+for (let source_string of input_file) {
+    let current_number = Number(source_string);
+    number_list.push(current_number);
+    console.log(number_list[number_list.length -1 ]);
+}
+*/
 
 
+
+/**
+Learning Day 1
 const input_file = fs.readFileSync('inputs/day_01').toString('utf-8').split('\n');
 
 for (let number_entry of input_file) {
@@ -13,3 +45,4 @@ for (let number_entry of input_file) {
         }
     }
 }
+*/
