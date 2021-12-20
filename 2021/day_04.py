@@ -7,7 +7,6 @@ DRAWN_NUMBERS: List[int] = []
 class BingoBoard:
     board: List[List[int]]
     board_rotated: List[List[int]]
-    winning_numbers: Optional[List[int]] = None
 
     def __init__(self, board: List[List[int]]):
         self.board = board
@@ -30,7 +29,6 @@ class BingoBoard:
     def check_hits(self, numbers: List[int]) -> bool:
         for row in self.board_rotated + self.board:
             if len(set(row) & set(numbers)) == 5:
-                self.winning_numbers = row
                 return True
         return False
 
