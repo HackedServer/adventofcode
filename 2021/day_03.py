@@ -1,5 +1,5 @@
 import os
-from typing import List, Dict, Optional
+from typing import Dict, List, Optional
 
 
 def get_input() -> List[str]:
@@ -45,8 +45,6 @@ def get_power_consumption_2() -> int:
         if len(oxygen_list) == 1:
             break
 
-    print(oxygen_list)
-
     co2_list = source.copy()
     for i in range(0, len(source[0])):
         match_char = "0" if get_most_common_character(co2_list, i) == "1" else "1"
@@ -56,7 +54,6 @@ def get_power_consumption_2() -> int:
         if len(co2_list) == 1:
             break
 
-    print(co2_list)
     return int(co2_list[0], 2) * int(oxygen_list[0], 2)
 
 
