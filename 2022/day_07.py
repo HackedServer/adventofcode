@@ -16,7 +16,7 @@ def compute_directory_sizes() -> dict[str, int]:
             elif line[0].isdigit():
                 filesize = int(line.split(" ")[0])
                 for i in range(len(directory_tracker) + 1):
-                    merged_dir_key = "/".join(directory_tracker[:i])
+                    merged_dir_key = tuple(directory_tracker[:i])
                     directory_cumulative_size[merged_dir_key] = (
                         directory_cumulative_size.get(merged_dir_key, 0) + filesize
                     )
@@ -36,7 +36,7 @@ def part_01(directory_sizes: dict[str, int]) -> int:
 def part_02(dirs: dict[str, int]) -> int:
     total_size = 70_000_000
     needed_size = 30_000_000
-    used_size = dirs["/"]
+    used_size = dirs[tuple("/")]
     free_size = total_size - used_size
     need_to_free_size = needed_size - free_size
     size = float('inf')
