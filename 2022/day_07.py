@@ -39,10 +39,11 @@ def part_02(dirs: dict[str, int]) -> int:
     used_size = dirs[tuple("/")]
     free_size = total_size - used_size
     need_to_free_size = needed_size - free_size
-    size = float('inf')
+    size = float("inf")
     for dir in dirs:
         if dirs[dir] >= need_to_free_size and dirs[dir] < size:
             size = dirs[dir]
+
     return int(size)
 
 
