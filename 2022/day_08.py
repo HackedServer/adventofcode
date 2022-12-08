@@ -1,11 +1,6 @@
 import os
 
 
-def pretty_print(input: list[list]):
-    for row in input:
-        print(" ".join(row))
-
-
 def parse_input() -> list[list[int]]:
     regular = []
 
